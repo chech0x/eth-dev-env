@@ -1,5 +1,9 @@
 # Ethereum Development Enviroment
-This is a docker image for easy development in Ethereum Solidity with Truffle and Ganache.
+This is a docker image for easy development in Ethereum Solidity. This image supports:
+
+ * Truffle,
+ * zeppelin-solidity
+ * and Ganache.
 
 ## Build image
 
