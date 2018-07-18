@@ -1,4 +1,4 @@
-# docker build -t eth-dev-env:0.0.1 .
+# docker build -t eth-dev-truffle:0.0.1 .
 FROM alpine:3.7
 LABEL maintainer="Sergio Campos <chech0x@gmail.com>"
 
