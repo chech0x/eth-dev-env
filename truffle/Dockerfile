@@ -1,12 +1,18 @@
-# docker build -t eth-dev-truffle:0.0.1 .
+# docker build -t eth-truffle-dev:0.0.1 .
 FROM alpine:3.7
 LABEL maintainer="Sergio Campos <chech0x@gmail.com>"
 
 
-RUN apk add --update nodejs nodejs-npm git autoconf build-base python && \
+RUN apk add --update -u nodejs nodejs-npm git autoconf build-base python curl openssh-client openssl openssl-dev && \
  npm install -g truffle && \
  npm install -g ganache-cli && \
- mkdir -p /root/workdir
+ npm install -g zeppelin-solidity && \
+ mkdir -p /root/workdir && \
+ curl -L -o solc https://github.com/ethereum/solidity/releases/download/v0.4.24/solc-static-linux && \
+ chmod +x solc  && \
+ mv solc /usr/bin/
+
+
 
 
 WORKDIR /root/workdir

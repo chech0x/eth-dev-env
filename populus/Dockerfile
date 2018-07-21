@@ -1,5 +1,4 @@
-# docker build -t eth-dev-populus:0.0.1 .
-#FROM alpine:3.7
+# docker build -t eth-truffle-dev:0.0.1 .
 FROM centos:7
 LABEL maintainer="Sergio Campos <chech0x@gmail.com>"
 
@@ -18,18 +17,15 @@ RUN cd /root && \
  pip3.6 install --upgrade pip "rlp<=0.6.0,>=0.4.7" && \
  pip3.6 install --no-cache  "populus>=2.2.0" "web3==v4.0.0-beta.4" "web3==v4.0.0-beta.4"
 
+RUN curl -L -o solc https://github.com/ethereum/solidity/releases/download/v0.4.24/solc-static-linux && \
+ chmod +x solc && \
+ mv solc /usr/bin/
 
-RUN /usr/bin/python3.6
 
-## RUN cd /root && \
-##  apk add --update --no-cache --no-cache openjdk8 python3 python3-dev curl git openssl autoconf automake build-base libffi libffi-dev openssl-dev && \
-##  curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-##  python3 get-pip.py && \
-##  rm get-pip.py && \
-## # pip install "populus>=2.2.0" "web3==v4.0.0-beta.4" && \
-## # pip install "web3==v4.0.0-beta.4" && \
-##  mkdir -p /root/workdir
+RUN echo "alias virtualp='python3.6 -m venv env && . env/bin/activate'" >> /root/.bashrc && \
+ chmod +x /root/.bashrc
 
+ENV LANG en_US.utf8
 
 WORKDIR /root/workdir
 
