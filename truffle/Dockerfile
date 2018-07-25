@@ -4,7 +4,6 @@ LABEL maintainer="Sergio Campos <chech0x@gmail.com>"
 
 
 RUN apk add -u --no-cache nodejs nodejs-npm git autoconf build-base python curl openssh-client openssl openssl-dev && \
- npn install -g npm@6 && \
  npm install -g truffle && \
  npm install -g ganache-cli && \
  npm install -g zeppelin-solidity && \
