@@ -1,4 +1,4 @@
-# docker build -t eth-truffle-dev:0.0.1 .
+# docker build -t eth-populus-dev:0.0.1 .
 FROM centos:7
 LABEL maintainer="Sergio Campos <chech0x@gmail.com>"
 

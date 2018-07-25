@@ -3,7 +3,8 @@ FROM alpine:3.8
 LABEL maintainer="Sergio Campos <chech0x@gmail.com>"
 
 
-RUN apk add -u --no-cache nodejs nodejs-npm git autoconf build-base python curl openssh-client openssl openssl-dev && \
+RUN apk add -u --no-cache nodejs-current npm git autoconf build-base python curl openssh-client openssl openssl-dev && \
+ npm install -g npm && \
  npm install -g truffle && \
  npm install -g ganache-cli && \
  npm install -g zeppelin-solidity && \
