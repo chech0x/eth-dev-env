@@ -1,9 +1,10 @@
 # docker build -t eth-truffle-dev:0.0.1 .
-FROM alpine:3.7
+FROM alpine:3.8
 LABEL maintainer="Sergio Campos <chech0x@gmail.com>"
 
 
-RUN apk add --update -u nodejs nodejs-npm git autoconf build-base python curl openssh-client openssl openssl-dev && \
+RUN apk add -u --no-cache nodejs nodejs-npm git autoconf build-base python curl openssh-client openssl openssl-dev && \
+ mpn install -g npm@6 && \
  npm install -g truffle && \
  npm install -g ganache-cli && \
  npm install -g zeppelin-solidity && \
