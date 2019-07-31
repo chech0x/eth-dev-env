@@ -9,6 +9,8 @@ This is a docker image for easy development in Ethereum Solidity. This image sup
  * Ganache (v6.5.0 (ganache-core: 2.6.0)s
  * solc (Version: 0.5.10+commit.5a6ea5b1.Linux.g++)
  * @openzeppelin/cli (2.5.2) (Openzeppelin SDK [ex **zos**])
+ * Node (v12.7.0)
+ * NPM (6.10.0)
  * git (2.22.0)
  * OpenSSL (1.1.1c  28 May 2019)
 
